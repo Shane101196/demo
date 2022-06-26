@@ -11,7 +11,9 @@ sourceCompatibility = '1.8'
 repositories {
 	mavenCentral()
 }
+
 task fatJar(type: Jar) {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 	manifest.from jar.manifest
 //    classifier = 'all'
 	from {
