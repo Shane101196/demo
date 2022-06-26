@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hola Natalia</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="button" id="firstOne" onclick="startGame()">New Game</button>
+<div id="Main">
+    <div id ="boxes">
+<div style="width: 500px;">
+<div class="box" id="box1"></div>
+<div class="box" id="box2"></div>
+<div class="box" id="box3"></div>
+<br style="clear: left;" />
+</div>
+<div style="width: 500px;">
+    <div class="box" id="box4"></div>
+    <div class="box" id="box5"></div>
+    <div class="box" id="box6"></div>
+    <br style="clear: left;" />
+</div>
+<div style="width: 500px;">
+    <div class="box" id="box7"></div>
+    <div class="box" id="box8"></div>
+    <div class="box" id="box9"></div>
+    <br style="clear: left;" />
+</div>
+    </div>
+<div style="width: 500px; margin-top: 40px;">
+    <label id="checkmark">Go First:     <input id="cb" type="checkbox" checked> </label>
+<button class="button" onclick="restartGame()">New Game</button>
+    <br style="clear: left;" />
+</div>
+</div>
+<div id="ddBox">
+<label id="ddText" for="ddMenu">Choose a difficulty:</label>
+
+<select name="ddMenu" id="ddMenu">
+    <option value="Easy">Easy</option>
+    <option value="Medium">Medium</option>
+    <option value="Impossible">Impossible</option>
+    <option value="Natalia">Natalia!</option>
+</select>
+</div>
+<div id="gameOver">
+   Yep !
+</div>
+<div id="catPic">
+    <a target="_blank">
+        <img  id="image" src="cat1.jpg" alt="" width="400" height="350">
+    </a>
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+body {
+  background-color: lightblue;
+}
+
+.box {
+  border: 2px solid black ;
+  background-size: 150px 150px;
+  background-color: transparent;
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.box:hover {
+  background-color: yellow;
+}
+
+#Main {
+  display: none;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+.button{
+margin-left: 125px;
+transform: scale(2);
+}
+
+#firstOne {
+z-index: 10;
+margin-top: 25px;
+}
+input[type=checkbox] {
+margin-left: 10px;
+    transform: scale(3);
+}
+
+#checkmark {
+    font-size: 30px;
+}
+
+#ddBox {
+  height: 58px;
+  position:relative;
+  bottom: -58px;
+}
+
+#gameOver {
+  height: 28px;
+  position:relative;
+  bottom: -28px;
+  font-size: 30px;
+  margin-top: 15px;
+  display: none;
+  color: red;
+}
+
+#catPic {
+  height: 10px;
+  position:relative;
+  bottom: -10px;
+  margin-top: 35px;
+  display: none;
+}
+
+#ddMenu {
+margin-left: 50px;
+transform: scale(2);
+}
+
+#ddText {
+font-size: 30px;
+}
+
+#box1 {
+ border-left: 0px;
+ border-top: 0px;
+}
+
+#box2 {
+ border-top: 0px;
+}
+
+#box3 {
+ border-right: 0px;
+ border-top: 0px;
+}
+
+#box4 {
+ border-left: 0px;
+}
+
+#box6 {
+ border-right: 0px;
+}
+
+#box7 {
+ border-left: 0px;
+ border-bottom: 0px;
+}
+
+#box8 {
+ border-bottom: 0px;
+}
+
+#box9 {
+ border-right: 0px;
+ border-bottom: 0px;
+}
+
+
