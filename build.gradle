@@ -19,17 +19,16 @@ jar {
 	}
 }
 
-//create a single Jar with all dependencies
-task fatJar(type: Jar) {
-	manifest {
-		attributes 'Implementation-Title': 'Gradle Jar File Example',
-				'Implementation-Version': version,
-				'Main-Class': 'com.example.demo.DemoApplication'
+configure(subprojects) {
+	apply plugin: "maven-publish"
+	apply plugin: "org.springframework.boot"
+	apply plugin: "io.spring.dependency-management"
+
+	springBoot {
+		buildInfo()
 	}
-	baseName = project.name + '-all'
-	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-	with jar
 }
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
