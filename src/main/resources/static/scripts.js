@@ -1,3 +1,6 @@
+let type = "normal";
+let difficulty = "easy";
+
 window.onload=function(){
 var elements = document.getElementsByClassName("box");
 for (var i = 0; i < elements.length; i++) {
@@ -15,14 +18,18 @@ function takeTurn() {
   }
 }
 function startGame() {
-    document.getElementById("Main").style.display = "block";
+    difficulty = document.getElementById("ddMenu").value;
+    document.getElementById("Main").style.display = "inline-block";
     document.getElementById("firstOne").style.display = "none";
+    type = document.getElementById("typeMenu").value;
 }
 function restartGame() {
+    difficulty = document.getElementById("ddMenu").value;
     document.getElementById("gameOver").style.display = "none";
     document.getElementById("catPic").style.display = "none";
     document.getElementById("boxes").style.pointerEvents = "auto";
     document.getElementById("boxes").style.opacity = "1.0";
+    type = document.getElementById("typeMenu").value;
 var elements = document.getElementsByClassName("box");
 for (var i = 0; i < elements.length; i++) {
     elements[i].style.backgroundImage = "";
@@ -33,7 +40,6 @@ if(!document.getElementById('cb').checked) {
 }
 
 function cpuTurn() {
-    var difficulty = document.getElementById("ddMenu").value;
     var index = "";
     if(difficulty == "Impossible") {
         index = impossibleTurn();
@@ -55,14 +61,14 @@ function cpuTurn() {
 function makeMove(index, cpu) {
 console.log(index);
       if(document.getElementById('cb').checked && cpu == false) {
-            document.getElementById(index).style.backgroundImage = 'url("o.png")';
+            document.getElementById(index).style.backgroundImage = 'url("' + type + '/o.png")';
       } else if(cpu == false){
-            document.getElementById(index).style.backgroundImage = 'url("x.png")';
+            document.getElementById(index).style.backgroundImage = 'url("' + type + '/x.png")';
       }
       if(document.getElementById('cb').checked && cpu == true) {
-            document.getElementById(index).style.backgroundImage = 'url("x.png")';
+            document.getElementById(index).style.backgroundImage = 'url("' + type + '/x.png")';
       } else if(cpu == true){
-            document.getElementById(index).style.backgroundImage = 'url("o.png")';
+            document.getElementById(index).style.backgroundImage = 'url("' + type + '/o.png")';
       }
 }
 
@@ -82,10 +88,10 @@ const arrO = [];
 var count = 0;
 var elements = document.getElementsByClassName("box");
 for (var i = 0; i < elements.length; i++) {
-     if(elements[i].style.backgroundImage == 'url("x.png")') {
+     if(elements[i].style.backgroundImage == 'url("' + type + '/x.png")') {
      count++;
         arrX.push(elements[i].id);
-     } else if(elements[i].style.backgroundImage == 'url("o.png")') {
+     } else if(elements[i].style.backgroundImage == 'url("' + type + '/o.png")') {
         count++;
         arrO.push(elements[i].id);
      }
@@ -108,12 +114,11 @@ return false;
 }
 
 function gameEnd(winner) {
-    var difficulty = document.getElementById("ddMenu").value;
     document.getElementById("boxes").style.pointerEvents = "none";
-    document.getElementById("gameOver").style.display = "block";
+    document.getElementById("gameOver").style.display = "inline-block";
     document.getElementById("boxes").style.opacity = "0.25";
     if(difficulty == "Natalia") {
-        document.getElementById("image").src = "cat" + Math.ceil(Math.random() * 10).toString() + ".jpg";
+        document.getElementById("image").src = "cats/cat" + Math.ceil(Math.random() * 10).toString() + ".jpg";
         document.getElementById("catPic").style.display = "block";
     }
     if(winner == "C") {
@@ -172,9 +177,9 @@ function checkWinMove(sign) {
     const arrO = [];
     var elements = document.getElementsByClassName("box");
     for (var i = 0; i < elements.length; i++) {
-         if(elements[i].style.backgroundImage == 'url("x.png")') {
+         if(elements[i].style.backgroundImage == 'url("' + type + '/x.png")') {
             arrX.push(elements[i].id);
-         } else if(elements[i].style.backgroundImage == 'url("o.png")') {
+         } else if(elements[i].style.backgroundImage == 'url("' + type + '/o.png")') {
             arrO.push(elements[i].id);
          }
     }
@@ -238,9 +243,9 @@ function checkBlockMove(sign) {
     const arrO = [];
     var elements = document.getElementsByClassName("box");
     for (var i = 0; i < elements.length; i++) {
-         if(elements[i].style.backgroundImage == 'url("x.png")') {
+         if(elements[i].style.backgroundImage == 'url("' + type + '/x.png")') {
             arrX.push(elements[i].id);
-         } else if(elements[i].style.backgroundImage == 'url("o.png")') {
+         } else if(elements[i].style.backgroundImage == 'url("' + type + '/o.png")') {
             arrO.push(elements[i].id);
          }
     }
@@ -271,10 +276,10 @@ function impossibleTurn(){
     const arrO = [];
     var elements = document.getElementsByClassName("box");
     for (var i = 0; i < elements.length; i++) {
-         if(elements[i].style.backgroundImage == 'url("x.png")') {
+         if(elements[i].style.backgroundImage == 'url("' + type + '/x.png")') {
          moveCount++;
             arrX.push(elements[i].id);
-         } else if(elements[i].style.backgroundImage == 'url("o.png")') {
+         } else if(elements[i].style.backgroundImage == 'url("' + type + '/o.png")') {
          moveCount++;
             arrO.push(elements[i].id);
          }
@@ -498,10 +503,10 @@ function badTurn(){
     const arrO = [];
     var elements = document.getElementsByClassName("box");
     for (var i = 0; i < elements.length; i++) {
-         if(elements[i].style.backgroundImage == 'url("x.png")') {
+         if(elements[i].style.backgroundImage == 'url("' + type + '/x.png")') {
             moveCount++;
             arrX.push(elements[i].id);
-         } else if(elements[i].style.backgroundImage == 'url("o.png")') {
+         } else if(elements[i].style.backgroundImage == 'url("' + type + '/o.png")') {
             moveCount++;
             arrO.push(elements[i].id);
          }

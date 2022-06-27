@@ -3,11 +3,11 @@
 <head>
     <title>Hola Natalia</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script src="scripts.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
-<button class="button" id="firstOne" onclick="startGame()">New Game</button>
+
 <div id="Main">
     <div id ="boxes">
 <div style="width: 500px;">
@@ -30,12 +30,16 @@
 </div>
     </div>
 <div style="width: 500px; margin-top: 40px;">
-    <label id="checkmark">Go First:     <input id="cb" type="checkbox" checked> </label>
 <button class="button" onclick="restartGame()">New Game</button>
     <br style="clear: left;" />
 </div>
 </div>
-<div id="ddBox">
+    <div id="flex-child right">
+    <button class="button" id="firstOne" onclick="startGame()">New Game</button>
+        <div style="width: 500px; margin-top: 40px;">
+        <label id="checkmark">Go First:     <input id="cb" type="checkbox" checked> </label>
+        </div>
+        <div id="ddBox">
 <label id="ddText" for="ddMenu">Choose a difficulty:</label>
 
 <select name="ddMenu" id="ddMenu">
@@ -45,13 +49,25 @@
     <option value="Natalia">Natalia!</option>
 </select>
 </div>
+        <div id="typeBox">
+            <label id="typeText" for="typeMenu">Choose a symbol type:</label>
+
+            <select name="typeMenu" id="typeMenu">
+                <option value="normal">Normal</option>
+                <option value="animal">Animals</option>
+                <option value="color">Colors</option>
+            </select>
+        </div>
 <div id="gameOver">
    Yep !
 </div>
 <div id="catPic">
     <a target="_blank">
-        <img  id="image" src="cat1.jpg" alt="" width="400" height="350">
+        <img id="image" src="cats/cat1.jpg" alt="" width="400" height="350">
     </a>
+    </div>
 </div>
+</div>
+
 </body>
 </html>

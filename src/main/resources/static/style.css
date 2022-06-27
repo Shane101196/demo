@@ -2,6 +2,14 @@ body {
   background-color: lightblue;
 }
 
+.flex-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.flex-child {
+    display:inline-block;
+}
 .box {
   border: 2px solid black ;
   background-size: 150px 150px;
@@ -42,7 +50,6 @@ margin-left: 10px;
 #ddBox {
   height: 58px;
   position:relative;
-  bottom: -58px;
 }
 
 #gameOver {
@@ -63,12 +70,12 @@ margin-left: 10px;
   display: none;
 }
 
-#ddMenu {
+#ddMenu, #typeMenu {
 margin-left: 50px;
 transform: scale(2);
 }
 
-#ddText {
+#ddText, #typeText {
 font-size: 30px;
 }
 
@@ -107,5 +114,3 @@ font-size: 30px;
  border-right: 0px;
  border-bottom: 0px;
 }
-
-
